@@ -1,0 +1,9 @@
+@using Microsoft.AspNetCore.Identity
+@using CoreImageGallery.Data
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+}
+<li><a asp-page="/Upload">Upload Image</a></li>

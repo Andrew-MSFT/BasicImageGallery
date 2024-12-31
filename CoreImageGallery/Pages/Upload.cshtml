@@ -1,0 +1,27 @@
+﻿@page
+@model CoreImageGallery.Pages.UploadModel
+@{
+    ViewData["Title"] = "Upload";
+}
+<h2>Choose file</h2>
+
+<form enctype="multipart/form-data" id="form" method="post">
+    <div class="form-group">
+        <div class="col-md-10">
+            <p>Choose image to upload</p>
+            <input type="file" name="file" id="file" />
+        </div>
+    </div>
+</form>
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $("#file").on('change', function () {
+                $("#form").submit();
+            });
+            $("#file").trigger("click");
+        });
+    </script>
+}
+
